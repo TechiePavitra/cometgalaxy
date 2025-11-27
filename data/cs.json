@@ -1,0 +1,21 @@
+{
+  "title": "CometGalaxy - Computer Science",
+  "topics": [
+    {
+      "id": "intro-cs",
+      "name": "1. Introduction to CS",
+      "children": [
+        { "id": "algorithms", "name": "Algorithms", "note": "Sorting, searching" },
+        { "id": "data-structures", "name": "Data Structures", "note": "Arrays, lists, trees" }
+      ]
+    },
+    {
+      "id": "web-dev",
+      "name": "2. Web Development",
+      "children": [
+        { "id": "html-css", "name": "HTML & CSS", "note": "Building blocks of the web" },
+        { "id": "javascript", "name": "JavaScript", "note": "Interactivity and logic" }
+      ]
+    }
+  ]
+}

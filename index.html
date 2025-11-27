@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CometGalaxy</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Titillium+Web:wght@400;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/modern-redesign.css">
+  <link rel="stylesheet" href="assets/css/book_viewer.css">
+
+  <!-- Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+  <!-- Background Canvas -->
+  <canvas id="cursor-bg"></canvas>
+
+  <!-- Background Math Objects -->
+  <div class="math-object obj-1">π</div>
+  <div class="math-object obj-2">∑</div>
+  <div class="math-object obj-3">∫</div>
+
+  <header id="header">
+    <div class="logo">CometGalaxy</div>
+    <button class="menu-toggle" id="menuBtn">
+      <i data-lucide="menu"></i>
+    </button>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home" class="nav-link active" data-tab="home">Home</a>
+      <a href="#roadmap" class="nav-link" data-tab="roadmap">Map</a>
+      <a href="#books" class="nav-link" data-tab="books">Books</a>
+      <a href="#videos" class="nav-link" data-tab="videos">Videos</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- Home Section -->
+    <section id="home" class="section active">
+      <div class="hero-content">
+        <span class="badge">🚀 Launch Your Learning!</span>
+        <h1>Welcome to <br>CometGalaxy</h1>
+        <p>Explore the universe of knowledge. Master Mathematics, Physics, and Computer Science in one place.</p>
+        <div class="hero-buttons">
+          <a href="#roadmap" class="cta-button primary" onclick="selectSubject('math'); return false;">
+            Get Started <i data-lucide="rocket"></i>
+          </a>
+          <a href="#books" class="cta-button secondary" onclick="switchTab('books'); return false;">
+            Read Books <i data-lucide="book"></i>
+          </a>
+          <a href="studypro-webapp/index.html" class="cta-button accent" target="_blank" title="Open StudyPro Paper Generator">
+            Gujarati Paper <i data-lucide="file-text"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Subject Selection Cards -->
+      <div class="subjects-section">
+        <h2 style="text-align: center; margin: 60px 0 30px;">Choose Your Subject</h2>
+        <div class="subjects-grid">
+          <div class="subject-card" onclick="selectSubject('math')">
+            <div class="subject-icon">
+              <i data-lucide="square-root"></i>
+            </div>
+            <h3>Mathematics</h3>
+            <p>Master algebraic, calculus, and geometry concepts</p>
+          </div>
+          <div class="subject-card" onclick="selectSubject('physics')">
+            <div class="subject-icon">
+              <i data-lucide="zap"></i>
+            </div>
+            <h3>Physics</h3>
+            <p>Explore mechanics, waves, and energy</p>
+          </div>
+          <div class="subject-card" onclick="selectSubject('cs')">
+            <div class="subject-icon">
+              <i data-lucide="code"></i>
+            </div>
+            <h3>Computer Science</h3>
+            <p>Learn algorithms, data structures, and systems</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="features">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i data-lucide="map"></i>
+          </div>
+          <h3>Structured Roadmaps</h3>
+          <p>Follow a clear path to mastery.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i data-lucide="book-open"></i>
+          </div>
+          <h3>Curated Books</h3>
+          <p>Access the best learning resources.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i data-lucide="play-circle"></i>
+          </div>
+          <h3>Video Tutorials</h3>
+          <p>Learn from top educators.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Roadmap Section -->
+    <section id="roadmap" class="section">
+      <div class="section-header">
+        <h2>Your Adventure Map</h2>
+        <p>Follow the steps to find the gold!</p>
+      </div>
+      <div class="search-wrapper">
+        <i data-lucide="search" class="search-icon"></i>
+        <input type="text" class="search-input" placeholder="Find a topic..." id="searchRoadmap">
+      </div>
+      <div id="roadmapContent">
+        <!-- Content injected by JS -->
+      </div>
+    </section>
+
+    <!-- Books Section -->
+    <section id="books" class="section">
+      <div class="section-header">
+        <h2>Library of Knowledge</h2>
+        <p>Pick a book and start your reading adventure.</p>
+      </div>
+      <div class="search-wrapper">
+        <i data-lucide="search" class="search-icon"></i>
+        <input type="text" class="search-input" placeholder="Search for a book..." id="searchBooks">
+      </div>
+      <div id="booksGrid" class="grid-container">
+        <!-- Content injected by JS -->
+      </div>
+    </section>
+
+    <!-- Videos Section -->
+    <section id="videos" class="section">
+      <div class="section-header">
+        <h2>Video Cinema</h2>
+        <p>Grab some popcorn and learn something new!</p>
+      </div>
+      <div class="search-wrapper">
+        <i data-lucide="search" class="search-icon"></i>
+        <input type="text" class="search-input" placeholder="Search for a video..." id="searchVideos">
+      </div>
+      <div id="videosGrid" class="grid-container">
+        <!-- Content injected by JS -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Book Modal -->
+  <div id="bookModal" class="modal">
+    <div class="book-viewer-content">
+      <div class="viewer-toolbar">
+        <div class="toolbar-group">
+          <button class="tool-btn" id="prevPage" title="Previous Page"><i data-lucide="chevron-left"></i></button>
+          <span id="pageInfo"><span id="pageNum">1</span> / <span id="pageCount">--</span></span>
+          <button class="tool-btn" id="nextPage" title="Next Page"><i data-lucide="chevron-right"></i></button>
+        </div>
+        <div class="toolbar-group">
+          <button class="tool-btn" id="zoomOut" title="Zoom Out"><i data-lucide="minus"></i></button>
+          <span id="zoomLevel">100%</span>
+          <button class="tool-btn" id="zoomIn" title="Zoom In"><i data-lucide="plus"></i></button>
+        </div>
+        <div class="toolbar-group">
+          <button class="tool-btn active" id="toolPointer" title="Pointer"><i data-lucide="mouse-pointer"></i></button>
+          <button class="tool-btn" id="toolPen" title="Pen"><i data-lucide="pen-tool"></i></button>
+          <button class="tool-btn" id="toolHighlighter" title="Highlighter"><i data-lucide="highlighter"></i></button>
+          <button class="tool-btn" id="toolEraser" title="Eraser"><i data-lucide="eraser"></i></button>
+          <div class="tool-settings">
+            <input type="color" id="penColor" value="#00f2ff" title="Pen Color">
+            <input type="range" id="penSize" min="1" max="10" value="2" title="Pen Size">
+          </div>
+        </div>
+        <button class="tool-btn" id="closeModal" title="Close"><i data-lucide="x"></i></button>
+      </div>
+      <div class="viewer-body">
+        <div id="canvasWrapper">
+          <canvas id="pdfRender"></canvas>
+          <canvas id="annotationLayer"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script>
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+  </script>
+  <script src="assets/js/book_viewer.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

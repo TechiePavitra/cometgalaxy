@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>StudyPro</title>
+
+  <link rel="icon" href="assets/icon.png" />
+  <link rel="stylesheet" href="app/modern-styles.css" />
+
+  <!-- Libraries from CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <!-- PDF.js for extracting text from digital PDFs -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.9.179/pdf.min.js"></script>
+</head>
+<body>
+  <div id="app">
+    <header class="topbar">
+      <img src="assets/icon.png" alt="logo" class="logo">
+      <h1>StudyPro</h1>
+      <div class="spacer"></div>
+
+      <input type="file" id="topCsvInput" accept=".csv" style="display:none">
+      <button id="importCsvTopBtn" title="Import CSV">Import CSV</button>
+      <button id="downloadCsvBtn">Export CSV</button>
+      <button id="fetchFromGithubBtn" title="Load from GitHub">Load from GitHub</button>
+    </header>
+
+    <main class="split">
+      <section class="left">
+        <h2>Question Manager</h2>
+        <div class="controls">
+          <select id="subjectSelect">
+            <option value="economics">Economics</option>
+            <option value="gujarati">Gujarati</option>
+            <option value="sanskrit">Sanskrit</option>
+            <option value="english">English</option>
+            <option value="psychology">Psychology</option>
+            <option value="philosophy">Philosophy</option>
+            <option value="computer">Computer</option>
+          </select>
+
+          <select id="typeSelect">
+            <option value="paragraph">Paragraph</option>
+            <option value="mcq">MCQ</option>
+            <option value="diagram">Diagram</option>
+          </select>
+
+          <select id="raritySelect">
+            <option value="most imp">Most IMP</option>
+            <option value="sometimes">Sometimes</option>
+            <option value="rarely">Rarely</option>
+          </select>
+
+          <select id="sectionSelect">
+            <option>A</option><option>B</option><option>C</option><option>D</option><option>E</option>
+          </select>
+        </div>
+
+        <textarea id="questionText" placeholder="Write question or paste extracted text"></textarea>
+
+        <div id="mcqOptions" class="mcq-grid" style="display:none">
+          <input placeholder="Option A" id="optA">
+          <input placeholder="Option B" id="optB">
+          <input placeholder="Option C" id="optC">
+          <input placeholder="Option D" id="optD">
+        </div>
+
+        <div class="buttons">
+          <button id="addQuestionBtn">Add Question</button>
+          <button id="openPdfViewerBtn">Import PDF (select text)</button>
+          <input type="file" id="csvInput" accept=".csv" style="display:none">
+        </div>
+
+        <h3>Questions (<span id="qcount">0</span>)</h3>
+        <ul id="questionList" class="question-list"></ul>
+      </section>
+
+      <section class="right">
+        <h2>Paper Generator</h2>
+
+        <label>Paper Subject
+          <input id="paperSubject" value="Economics">
+        </label>
+
+        <label>Marks
+          <input id="paperMarks" value="100">
+        </label>
+
+        <label>Include rarities
+          <select id="includeRarity">
+            <option value="all">All</option>
+            <option value="most imp">Most IMP only</option>
+            <option value="sometimes">Sometimes only</option>
+            <option value="rarely">Rarely only</option>
+          </select>
+        </label>
+
+        <div class="buttons">
+          <button id="generateBtn">Generate Paper (PDF)</button>
+        </div>
+
+        <h3>Preview</h3>
+        <div id="preview" class="preview-box">No preview yet.</div>
+      </section>
+    </main>
+
+    <!-- PDF Viewer Modal -->
+    <div id="pdfModal" class="modal" style="display:none">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>PDF Viewer — Select text and click "Add Selected Text"</h3>
+          <button id="closePdfModal">Close</button>
+        </div>
+        <div id="pdfViewerContainer" class="pdf-viewer-container"></div>
+        <div class="modal-footer">
+          <button id="addSelectedTextBtn">Add Selected Text</button>
+          <input type="file" id="pdfFileInput" accept="application/pdf">
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="app/webapp.js"></script>
+</body>
+</html>

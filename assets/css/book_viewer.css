@@ -1,0 +1,180 @@
+/* Book Viewer Styles */
+
+/* Modal Container */
+#bookModal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(10px);
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#bookModal.active {
+    display: flex;
+    opacity: 1;
+}
+
+.book-viewer-content {
+    background: #1a1a1a;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    overflow: hidden;
+    height: 95vh;
+    max-width: 95vw;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+}
+
+.viewer-toolbar {
+    height: 60px;
+    background: #0f172a;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    gap: 20px;
+}
+
+.toolbar-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 5px 10px;
+    border-radius: var(--radius-full);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.tool-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.tool-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-main);
+}
+
+.tool-btn.active {
+    background: var(--primary);
+    color: var(--bg-dark);
+    box-shadow: 0 0 10px var(--primary);
+}
+
+#pageInfo,
+#zoomLevel {
+    font-family: 'Titillium Web', monospace;
+    color: var(--text-main);
+    font-size: 0.9rem;
+    min-width: 80px;
+    text-align: center;
+}
+
+.viewer-body {
+    flex: 1;
+    background: #050a14;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+    position: relative;
+}
+
+#canvasWrapper {
+    position: relative;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+#pdfRender {
+    display: block;
+    background: #fff;
+}
+
+#annotationLayer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    /* Default to none, enable when drawing */
+}
+
+.drawing-mode #annotationLayer {
+    pointer-events: auto;
+    cursor: crosshair;
+}
+
+.tool-settings {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 10px;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    padding-left: 10px;
+}
+
+input[type="color"] {
+    width: 30px;
+    height: 30px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+input[type="range"] {
+    width: 80px;
+    accent-color: var(--primary);
+}
+
+/* Scrollbar for viewer */
+.viewer-body::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+.viewer-body::-webkit-scrollbar-track {
+    background: #050a14;
+}
+
+.viewer-body::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 5px;
+}
+
+.viewer-body::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
+}
+
+/* Close Button */
+#closeModal {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-main);
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+#closeModal:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+}

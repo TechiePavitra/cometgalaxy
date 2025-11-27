@@ -1,0 +1,10 @@
+License Attribution for Icon
+``````````````````````````````
+Icon Name: Study
+Icon Set: 3D Fluency
+Source: https://icons8.com/icons/set/study--style-3d-fluency
+Author: Icons8
+License: Free to use with attribution
+Website: https://icons8.com
+``````````````````````````````
+This application uses icons provided by Icons8 under a free-to-use license with required attribution.

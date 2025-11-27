@@ -1,0 +1,608 @@
+/* ============================================
+   STUDYPRO - MODERN REDESIGN (CometGalaxy Theme)
+   ============================================ */
+
+:root {
+    --bg-dark: #0a0e27;
+    --bg-secondary: #111633;
+    --bg-tertiary: #1a1f3a;
+    --primary: #00d9ff;
+    --primary-dark: #0099cc;
+    --secondary: #a855f7;
+    --accent: #06ffa5;
+    --text-primary: #ffffff;
+    --text-secondary: #cbd5e1;
+    --text-muted: #94a3b8;
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-secondary) 100%);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+
+.topbar {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 40px;
+    background: rgba(10, 14, 39, 0.7);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0, 217, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-md);
+    object-fit: cover;
+    transition: var(--transition);
+    filter: drop-shadow(0 0 10px rgba(0, 217, 255, 0.3));
+}
+
+.logo:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.topbar h1 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -0.5px;
+}
+
+.spacer {
+    flex: 1;
+}
+
+.topbar button {
+    background: linear-gradient(135deg, rgba(0, 217, 255, 0.15), rgba(168, 85, 247, 0.15));
+    border: 1px solid rgba(0, 217, 255, 0.2);
+    color: var(--text-secondary);
+    padding: 10px 20px;
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: var(--transition);
+    font-family: inherit;
+}
+
+.topbar button:hover {
+    background: rgba(0, 217, 255, 0.2);
+    border-color: var(--primary);
+    color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(0, 217, 255, 0.2);
+}
+
+/* ============================================
+   MAIN LAYOUT
+   ============================================ */
+
+#app {
+    min-height: 100vh;
+}
+
+.split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    padding: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.left,
+.right {
+    background: rgba(26, 31, 58, 0.6);
+    border: 1px solid rgba(0, 217, 255, 0.1);
+    padding: 32px;
+    border-radius: var(--radius-lg);
+    backdrop-filter: blur(10px);
+    transition: var(--transition);
+}
+
+.left:hover,
+.right:hover {
+    border-color: rgba(0, 217, 255, 0.2);
+    background: rgba(26, 31, 58, 0.8);
+}
+
+.left h2,
+.right h2 {
+    font-size: 1.6rem;
+    margin-bottom: 24px;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.left h3 {
+    font-size: 1.1rem;
+    margin: 24px 0 16px;
+    color: var(--text-secondary);
+}
+
+/* ============================================
+   FORMS & INPUTS
+   ============================================ */
+
+.controls {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+select,
+input[type="text"],
+input[type="number"],
+textarea {
+    width: 100%;
+    background: rgba(10, 14, 39, 0.5);
+    border: 1px solid rgba(0, 217, 255, 0.2);
+    border-radius: var(--radius-md);
+    padding: 12px 16px;
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    font-family: inherit;
+    transition: var(--transition);
+    outline: none;
+}
+
+select::placeholder,
+input::placeholder,
+textarea::placeholder {
+    color: var(--text-muted);
+}
+
+select:focus,
+input:focus,
+textarea:focus {
+    border-color: var(--primary);
+    background: rgba(10, 14, 39, 0.8);
+    box-shadow: 0 0 20px rgba(0, 217, 255, 0.15);
+}
+
+select option {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+}
+
+textarea#questionText {
+    grid-column: 1 / -1;
+    height: 120px;
+    resize: vertical;
+    font-size: 0.95rem;
+}
+
+/* MCQ Options Grid */
+.mcq-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.mcq-grid input {
+    grid-column: span 1;
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.buttons button {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    border: none;
+    color: var(--bg-dark);
+    padding: 14px 20px;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 0.95rem;
+    font-family: inherit;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.buttons button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: left 0.3s ease;
+}
+
+.buttons button:hover::before {
+    left: 100%;
+}
+
+.buttons button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 30px rgba(0, 217, 255, 0.4);
+}
+
+.buttons button:active {
+    transform: translateY(-1px);
+}
+
+/* ============================================
+   LISTS
+   ============================================ */
+
+.question-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 400px;
+    overflow-y: auto;
+    border: 1px solid rgba(0, 217, 255, 0.1);
+    border-radius: var(--radius-md);
+}
+
+.question-list li {
+    padding: 16px;
+    border-bottom: 1px solid rgba(0, 217, 255, 0.05);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.question-list li:last-child {
+    border-bottom: none;
+}
+
+.question-list li:hover {
+    background: rgba(0, 217, 255, 0.1);
+    border-color: rgba(0, 217, 255, 0.2);
+    padding-left: 20px;
+}
+
+.question-list li > div:first-child {
+    flex: 1;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.question-list .meta {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-left: auto;
+    background: rgba(0, 217, 255, 0.1);
+    padding: 4px 8px;
+    border-radius: var(--radius-sm);
+}
+
+/* ============================================
+   PREVIEW & DISPLAY
+   ============================================ */
+
+.preview-box {
+    background: rgba(10, 14, 39, 0.5);
+    border: 2px dashed rgba(0, 217, 255, 0.2);
+    padding: 20px;
+    border-radius: var(--radius-md);
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    transition: var(--transition);
+}
+
+.preview-box:hover {
+    border-color: rgba(0, 217, 255, 0.4);
+    background: rgba(0, 217, 255, 0.05);
+}
+
+.preview-box p {
+    text-align: center;
+}
+
+/* ============================================
+   PAPER GENERATOR
+   ============================================ */
+
+#paperSubject,
+#paperMarks,
+#includeRarity {
+    width: 100%;
+}
+
+#preview {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-top: 12px;
+}
+
+/* ============================================
+   MODAL
+   ============================================ */
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    width: 90%;
+    max-width: 1000px;
+    background: var(--bg-secondary);
+    border: 1px solid rgba(0, 217, 255, 0.2);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-height: 85vh;
+    overflow: hidden;
+    box-shadow: 0 0 60px rgba(0, 217, 255, 0.3);
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(0, 217, 255, 0.1);
+}
+
+.modal-header h2 {
+    font-size: 1.4rem;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.close-btn {
+    background: transparent;
+    border: 1px solid rgba(0, 217, 255, 0.2);
+    color: var(--text-secondary);
+    padding: 8px 12px;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 1.2rem;
+}
+
+.close-btn:hover {
+    background: rgba(0, 217, 255, 0.1);
+    border-color: var(--primary);
+    color: var(--primary);
+    transform: rotate(90deg);
+}
+
+.pdf-viewer-container {
+    overflow: auto;
+    background: rgba(10, 14, 39, 0.8);
+    padding: 16px;
+    border-radius: var(--radius-md);
+    height: 60vh;
+    border: 1px solid rgba(0, 217, 255, 0.1);
+}
+
+.pdf-page {
+    margin-bottom: 16px;
+    position: relative;
+    border: 1px solid rgba(0, 217, 255, 0.15);
+    border-radius: var(--radius-md);
+    padding: 8px;
+    background: white;
+}
+
+.pdf-canvas {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: var(--radius-sm);
+}
+
+.pdf-textLayer {
+    position: absolute;
+    left: 8px;
+    top: 8px;
+    right: 8px;
+    bottom: 8px;
+    pointer-events: auto;
+}
+
+.modal-footer {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: flex-end;
+    padding-top: 16px;
+    border-top: 1px solid rgba(0, 217, 255, 0.1);
+}
+
+.modal-footer button {
+    background: linear-gradient(135deg, var(--secondary), #7c3aed);
+    border: none;
+    color: var(--text-primary);
+    padding: 12px 24px;
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 0.95rem;
+    font-family: inherit;
+    transition: var(--transition);
+}
+
+.modal-footer button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 30px rgba(168, 85, 247, 0.4);
+}
+
+/* ============================================
+   SCROLLBAR
+   ============================================ */
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--primary), var(--secondary));
+    border-radius: 5px;
+    border: 2px solid var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, var(--accent), var(--primary));
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 1024px) {
+    .split {
+        gap: 20px;
+        padding: 24px;
+    }
+
+    .left,
+    .right {
+        padding: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .topbar {
+        padding: 16px 20px;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .logo {
+        width: 36px;
+        height: 36px;
+    }
+
+    .topbar h1 {
+        font-size: 1.3rem;
+        flex: 1;
+    }
+
+    .topbar button {
+        padding: 8px 14px;
+        font-size: 0.8rem;
+    }
+
+    .split {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .controls {
+        grid-template-columns: 1fr;
+    }
+
+    .buttons {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-content {
+        width: 95%;
+        padding: 16px;
+        max-height: 90vh;
+    }
+
+    .pdf-viewer-container {
+        height: 50vh;
+    }
+}
+
+@media (max-width: 480px) {
+    .topbar {
+        padding: 12px 16px;
+    }
+
+    .topbar h1 {
+        font-size: 1.1rem;
+    }
+
+    .topbar button {
+        padding: 6px 10px;
+        font-size: 0.75rem;
+    }
+
+    .split {
+        padding: 16px;
+    }
+
+    .left,
+    .right {
+        padding: 16px;
+    }
+
+    .left h2,
+    .right h2 {
+        font-size: 1.3rem;
+    }
+
+    .modal-content {
+        border-radius: var(--radius-md);
+    }
+}

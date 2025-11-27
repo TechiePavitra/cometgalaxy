@@ -1,0 +1,22 @@
+{
+  "title": "CometGalaxy - Physics",
+  "topics": [
+    {
+      "id": "mechanics",
+      "name": "1. Mechanics",
+      "children": [
+        { "id": "kinematics", "name": "Kinematics", "note": "Motion in 1D and 2D" },
+        { "id": "newtons-laws", "name": "Newton's Laws", "note": "Forces and motion" },
+        { "id": "energy", "name": "Work & Energy", "note": "Conservation of energy" }
+      ]
+    },
+    {
+      "id": "electromagnetism",
+      "name": "2. Electromagnetism",
+      "children": [
+        { "id": "electrostatics", "name": "Electrostatics", "note": "Charges and fields" },
+        { "id": "circuits", "name": "Circuits", "note": "Ohm's law, Kirchhoff's laws" }
+      ]
+    }
+  ]
+}

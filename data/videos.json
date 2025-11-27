@@ -1,0 +1,36 @@
+{
+  "videos": [
+    {
+      "id": "calc-1-intro",
+      "title": "Calculus 1 - Introduction",
+      "channel": "3Blue1Brown",
+      "category": "Calculus",
+      "thumbnail": "https://img.youtube.com/vi/WUvTyaaNkzM/maxresdefault.jpg",
+      "url": "https://www.youtube.com/embed/WUvTyaaNkzM"
+    },
+    {
+      "id": "linear-algebra-intro",
+      "title": "Essence of Linear Algebra",
+      "channel": "3Blue1Brown",
+      "category": "Linear Algebra",
+      "thumbnail": "https://img.youtube.com/vi/fNk_zzaMoSs/maxresdefault.jpg",
+      "url": "https://www.youtube.com/embed/fNk_zzaMoSs"
+    },
+    {
+      "id": "number-theory",
+      "title": "Introduction to Number Theory",
+      "channel": "Mathologer",
+      "category": "Number Theory",
+      "thumbnail": "https://img.youtube.com/vi/N-7tcTIrers/maxresdefault.jpg",
+      "url": "https://www.youtube.com/embed/N-7tcTIrers"
+    },
+    {
+      "id": "topology-intro",
+      "title": "Who cares about Topology?",
+      "channel": "3Blue1Brown",
+      "category": "Topology",
+      "thumbnail": "https://img.youtube.com/vi/AmgkSdhK4K8/maxresdefault.jpg",
+      "url": "https://www.youtube.com/embed/AmgkSdhK4K8"
+    }
+  ]
+}

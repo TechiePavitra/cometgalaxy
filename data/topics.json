@@ -1,0 +1,275 @@
+{
+  "title": "The Goldmine",
+  "topics": [
+    {
+      "id": "foundations-of-numbers",
+      "name": "1. Foundations of Numbers",
+      "children": [
+        { "id": "number-systems", "name": "Number Systems", "note": "Natural, Integers, Rational, Real, Complex" },
+        { "id": "basic-properties", "name": "Counting & Basic Properties", "note": "Primes, GCD, LCM, factors & multiples" },
+        { "id": "place-value", "name": "Place Value & Bases", "note": "Binary, hexadecimal, scientific notation" },
+        { "id": "intro-logic", "name": "Intro Logic", "note": "Statements, truth tables, implications" }
+      ]
+    },
+
+    {
+      "id": "fractions-decimals-percents",
+      "name": "2. Fractions, Decimals & Percents",
+      "children": [
+        { "id": "fractions", "name": "Fractions", "note": "Equivalent, operations, mixed numbers" },
+        { "id": "decimals", "name": "Decimals", "note": "Place value, rounding, conversions" },
+        { "id": "percents", "name": "Percents", "note": "Interest, growth/decay, conversions" }
+      ]
+    },
+
+    {
+      "id": "ratios-proportions-exponents",
+      "name": "3. Ratios, Proportions & Exponents",
+      "children": [
+        { "id": "ratios", "name": "Ratios & Proportions", "note": "Direct/Inverse variation" },
+        { "id": "rates", "name": "Rates", "note": "Speed, density, mixture problems" },
+        { "id": "exponents-roots", "name": "Exponents & Roots", "note": "Laws, scientific notation, roots" }
+      ]
+    },
+
+    {
+      "id": "early-algebra",
+      "name": "4. Early Algebra",
+      "children": [
+        { "id": "expressions", "name": "Expressions & Variables", "note": "Simplifying, substitution" },
+        { "id": "linear-equations", "name": "Linear Equations & Inequalities", "note": "Solving, graphing" },
+        { "id": "coordinate-graphing", "name": "Coordinate Graphing", "note": "Slope, intercept, plotting" }
+      ]
+    },
+
+    {
+      "id": "geometry-essentials",
+      "name": "5. Geometry Essentials",
+      "children": [
+        { "id": "basic-figures", "name": "Basic Figures", "note": "Angles, triangles, polygons" },
+        { "id": "measurement", "name": "Area, Perimeter, Volume", "note": "2D & 3D formulas" },
+        { "id": "transformations", "name": "Transformations", "note": "Reflections, rotations, dilations" }
+      ]
+    },
+
+    {
+      "id": "data-probability-intro",
+      "name": "6. Data & Probability (Intro)",
+      "children": [
+        { "id": "data-representation", "name": "Data Representation", "note": "Bar/line charts, tables" },
+        { "id": "descriptive-stats", "name": "Descriptive Statistics", "note": "Mean, median, mode" },
+        { "id": "basic-probability", "name": "Basic Probability", "note": "Outcomes, events, sample space" }
+      ]
+    },
+
+    {
+      "id": "intermediate-algebra",
+      "name": "7. Intermediate Algebra",
+      "children": [
+        { "id": "polynomials", "name": "Polynomials", "note": "Factoring, division" },
+        { "id": "quadratics", "name": "Quadratics", "note": "Solving, graphing, applications" },
+        { "id": "systems", "name": "Systems of Equations", "note": "Substitution, elimination" }
+      ]
+    },
+
+    {
+      "id": "intermediate-geometry",
+      "name": "8. Intermediate Geometry",
+      "children": [
+        { "id": "similarity", "name": "Congruence & Similarity", "note": "SSS, SAS, AA" },
+        { "id": "circle-theorems", "name": "Circle Theorems", "note": "Tangent, chord, arc theorems" },
+        { "id": "coordinate-geometry", "name": "Coordinate Geometry", "note": "Distance, midpoint, area" }
+      ]
+    },
+
+    {
+      "id": "trigonometry",
+      "name": "9. Trigonometry",
+      "children": [
+        { "id": "trig-ratios", "name": "Trig Ratios", "note": "sin, cos, tan, right triangle" },
+        { "id": "trig-identities", "name": "Identities & Equations", "note": "Pythagorean, angle identities" },
+        { "id": "trig-laws", "name": "Graphs & Laws", "note": "Unit circle, sine/cosine rule" }
+      ]
+    },
+
+    {
+      "id": "precalculus",
+      "name": "10. Pre-Calculus",
+      "children": [
+        { "id": "functions", "name": "Functions & Types", "note": "Polynomial, rational, exponential" },
+        { "id": "sequences-series", "name": "Sequences & Series", "note": "AP, GP, basics of convergence" },
+        { "id": "conic-sections", "name": "Conics", "note": "Parabola, ellipse, hyperbola" }
+      ]
+    },
+
+    {
+      "id": "calculus-1",
+      "name": "11. Calculus I (Differential)",
+      "children": [
+        { "id": "limits", "name": "Limits & Continuity", "note": "Approach, behavior, formal definitions" },
+        { "id": "derivatives", "name": "Derivatives", "note": "Rules, motion, optimization" }
+      ]
+    },
+
+    {
+      "id": "calculus-2",
+      "name": "12. Calculus II (Integral)",
+      "children": [
+        { "id": "integration-techniques", "name": "Integration Techniques", "note": "Substitution, parts, partial fractions" },
+        { "id": "integral-applications", "name": "Applications", "note": "Area, volume, arc length" }
+      ]
+    },
+
+    {
+      "id": "calculus-3",
+      "name": "13. Calculus III (Multivariable)",
+      "children": [
+        { "id": "partial-derivatives", "name": "Partial Derivatives", "note": "Gradient, Jacobian, Hessian" },
+        { "id": "multiple-integrals", "name": "Multiple Integrals & Vector Calc", "note": "Green, Stokes, Gauss" }
+      ]
+    },
+
+    {
+      "id": "linear-algebra",
+      "name": "14. Linear Algebra",
+      "children": [
+        { "id": "vectors", "name": "Vectors & Matrices", "note": "Operations, linear systems" },
+        { "id": "eigenvalues", "name": "Eigenvalues & Eigenvectors", "note": "Diagonalization, applications" }
+      ]
+    },
+
+    {
+      "id": "differential-equations",
+      "name": "15. Differential Equations",
+      "children": [
+        { "id": "odes", "name": "ODEs", "note": "1st/2nd order, systems" },
+        { "id": "applications-odes", "name": "Applications", "note": "Physics, biology, circuits" }
+      ]
+    },
+
+    {
+      "id": "real-analysis",
+      "name": "16. Real Analysis",
+      "children": [
+        { "id": "analysis-limits", "name": "Sequences & Limits", "note": "Rigorous convergence, Cauchy" },
+        { "id": "riemann-integration", "name": "Integration Theory", "note": "Riemann, uniform convergence" }
+      ]
+    },
+
+    {
+      "id": "advanced-probability",
+      "name": "17. Probability & Statistics (Advanced)",
+      "children": [
+        { "id": "distributions", "name": "Distributions", "note": "Binomial, Poisson, Normal" },
+        { "id": "inference", "name": "Inference", "note": "Regression, estimation, likelihood" }
+      ]
+    },
+
+    {
+      "id": "abstract-algebra",
+      "name": "18. Abstract Algebra",
+      "children": [
+        { "id": "groups", "name": "Groups", "note": "Structure, homomorphisms" },
+        { "id": "rings-fields", "name": "Rings & Fields", "note": "Polynomials, extensions" }
+      ]
+    },
+
+    {
+      "id": "complex-analysis",
+      "name": "19. Complex Analysis",
+      "children": [
+        { "id": "analytic-functions", "name": "Analytic Functions", "note": "Cauchy-Riemann, contour integrals" },
+        { "id": "series", "name": "Series", "note": "Taylor & Laurent series" }
+      ]
+    },
+
+    {
+      "id": "topology",
+      "name": "20. Topology",
+      "children": [
+        { "id": "topology-basics", "name": "Basics", "note": "Open/closed sets, continuity" },
+        { "id": "compact-connected", "name": "Compactness & Connectedness", "note": "Key theorems" }
+      ]
+    },
+
+    {
+      "id": "measure-theory",
+      "name": "21. Measure Theory & Lebesgue",
+      "children": [
+        { "id": "sigma-algebras", "name": "σ-algebras", "note": "Measurable sets & functions" },
+        { "id": "lebesgue", "name": "Lebesgue Integral", "note": "L^p spaces" }
+      ]
+    },
+
+    {
+      "id": "functional-analysis",
+      "name": "22. Functional Analysis",
+      "children": [
+        { "id": "banach-hilbert", "name": "Banach & Hilbert Spaces", "note": "Operators, spectral theory" }
+      ]
+    },
+
+    {
+      "id": "pdes",
+      "name": "23. Partial Differential Equations",
+      "children": [
+        { "id": "classic-pdes", "name": "Classic PDEs", "note": "Heat, wave, Laplace" },
+        { "id": "pde-methods", "name": "Methods", "note": "Separation, weak solutions" }
+      ]
+    },
+
+    {
+      "id": "advanced-algebra",
+      "name": "24. Advanced Abstract Algebra",
+      "children": [
+        { "id": "galois-theory", "name": "Galois Theory", "note": "Field extensions & solvability" },
+        { "id": "representation-theory", "name": "Representation Theory", "note": "Matrices & group actions" }
+      ]
+    },
+
+    {
+      "id": "differential-geometry",
+      "name": "25. Differential Geometry",
+      "children": [
+        { "id": "curves-surfaces", "name": "Curves & Surfaces", "note": "Curvature, geodesics" },
+        { "id": "riemannian-geometry", "name": "Riemannian Geometry", "note": "Metrics, curvature tensors" }
+      ]
+    },
+
+    {
+      "id": "stochastic-processes",
+      "name": "26. Stochastic Processes",
+      "children": [
+        { "id": "martingales", "name": "Martingales & Brownian Motion", "note": "Ito calculus" },
+        { "id": "sdes", "name": "Stochastic Differential Equations", "note": "Modeling" }
+      ]
+    },
+
+    {
+      "id": "discrete-mathematics",
+      "name": "27. Discrete Mathematics",
+      "children": [
+        { "id": "combinatorics", "name": "Combinatorics", "note": "Counting, permutations, combinations" },
+        { "id": "graph-theory", "name": "Graph Theory", "note": "Trees, networks, traversals" }
+      ]
+    },
+
+    {
+      "id": "numerical-methods",
+      "name": "28. Numerical Methods",
+      "children": [
+        { "id": "numerical-calculus", "name": "Numerical Calculus", "note": "Approximation, interpolation" },
+        { "id": "numerical-linear-algebra", "name": "Numerical Linear Algebra", "note": "Optimization & solvers" }
+      ]
+    },
+
+    {
+      "id": "optimization",
+      "name": "29. Optimization",
+      "children": [
+        { "id": "linear-programming", "name": "Linear Programming", "note": "Simplex, duality" },
+        { "id": "convex-optimization", "name": "Convex Optimization", "note": "Gradients, Lagrange multipliers" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "books": [
+    {
+      "id": "calc-spivak",
+      "title": "Calculus",
+      "author": "Michael Spivak",
+      "category": "Calculus",
+      "file": "books/calculus-spivak.pdf",
+      "icon": "fa-infinity",
+      "color": "#667eea",
+      "colorEnd": "#764ba2"
+    },
+    {
+      "id": "linear-algebra-done-right",
+      "title": "Linear Algebra Done Right",
+      "author": "Sheldon Axler",
+      "category": "Algebra",
+      "file": "books/linear-algebra-done-right.pdf",
+      "icon": "fa-vector-square",
+      "color": "#FF8C43",
+      "colorEnd": "#FF6B35"
+    },
+    {
+      "id": "principles-analysis",
+      "title": "Principles of Mathematical Analysis",
+      "author": "Walter Rudin",
+      "category": "Analysis",
+      "file": "books/rudin-analysis.pdf",
+      "icon": "fa-chart-line",
+      "color": "#e91e63",
+      "colorEnd": "#c2185b"
+    },
+    {
+      "id": "euclid-elements",
+      "title": "Everything You Need to Ace Math in One Big Fat Notebook: The Complete Middle School Study Guide",
+      "author": "Workman Publishing",
+      "category": "Guide",
+      "file": "books/EverythingYouNeedtoAceMathinOneBigFatNotebookTheCompleteMiddleSchoolStudyGuidebyOuida.pdf",
+      "icon": "fa-shapes",
+      "color": "#00bcd4",
+      "colorEnd": "#0097a7"
+    },
+    {
+      "id": "euclid-elements",
+      "title": "How to Be a Maths Genius",
+      "author": "DK Publishing",
+      "category": "Guide",
+      "file": "books/HowtoBeaMathsGeniusbyDK.pdf",
+      "icon": "fa-shapes",
+      "color": "#00bcd4",
+      "colorEnd": "#0097a7"
+    },
+    {
+      "id": "probability-intro",
+      "title": "Introduction to Probability",
+      "author": "Joseph Blitzstein",
+      "category": "Statistics",
+      "file": "books/intro-probability.pdf",
+      "icon": "fa-dice",
+      "color": "#9c27b0",
+      "colorEnd": "#7b1fa2"
+    },
+    {
+      "id": "algebra-guide",
+      "title": "Everthing You Need to Ace Pre-Algebra & Algebra",
+      "author": "Workman Publishing",
+      "category": "Algebra",
+      "file": "books/EverythingYouNeedAcePreAlgebraAlgebraWang.pdf",
+      "icon": "fa-diagram-project",
+      "color": "#FF8C43",
+      "colorEnd": "#e65100"
+    }
+  ]
+}
