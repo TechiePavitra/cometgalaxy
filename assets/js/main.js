@@ -18,6 +18,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinksContainer = document.getElementById('navLinks');
     const modal = document.getElementById('bookModal');
     const closeModal = document.getElementById('closeModal');
+    const subjectOverlay = document.getElementById('subjectOverlay');
+    const subjectClose = document.getElementById('subjectClose');
+    const backBtn = document.getElementById('backBtn');
+    const logoEl = document.getElementById('logo');
 
     // --- Cursor Background Effect ---
     const canvas = document.getElementById('cursor-bg');
@@ -101,6 +105,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         if (navLinksContainer) navLinksContainer.classList.remove('active');
+        // show/hide back button depending on tab
+        if (backBtn) {
+            if (tabId && tabId !== 'home') {
+                backBtn.style.display = 'inline-flex';
+            } else {
+                backBtn.style.display = 'none';
+            }
+        }
         
         // Clear search inputs when switching tabs
         document.querySelectorAll('.search-input').forEach(input => {
@@ -122,6 +134,58 @@ document.addEventListener('DOMContentLoaded', () => {
     if (menuBtn) {
         menuBtn.addEventListener('click', () => {
             navLinksContainer.classList.toggle('active');
+        });
+    }
+
+    // Subject selector open/close
+    function openSubjectSelector() {
+        if (!subjectOverlay) return;
+        subjectOverlay.setAttribute('aria-hidden', 'false');
+        lucide.createIcons();
+        // ensure mobile nav closed
+        if (navLinksContainer) navLinksContainer.classList.remove('active');
+        window.scrollTo(0, 0);
+    }
+
+    function closeSubjectSelector() {
+        if (!subjectOverlay) return;
+        subjectOverlay.setAttribute('aria-hidden', 'true');
+    }
+
+    window.openSubjectSelector = openSubjectSelector;
+
+    if (subjectClose) {
+        subjectClose.addEventListener('click', (e) => {
+            e.preventDefault();
+            closeSubjectSelector();
+        });
+    }
+
+    // Logo click acts as back/home
+    if (logoEl) {
+        logoEl.style.cursor = 'pointer';
+        logoEl.addEventListener('click', (e) => {
+            // If not on home, go home; otherwise do nothing
+            if (state.activeTab && state.activeTab !== 'home') {
+                switchTab('home');
+            } else {
+                // already on home - maybe scroll to top
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        });
+    }
+
+    // Back button behavior
+    if (backBtn) {
+        backBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            // If history is available, go back; otherwise go to home
+            if (window.history && window.history.length > 1) {
+                window.history.back();
+                setTimeout(() => switchTab('home'), 200);
+            } else {
+                switchTab('home');
+            }
         });
     }
 
@@ -179,6 +243,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function selectSubject(subject) {
         state.currentSubject = subject;
+        // close selector overlay if open
+        try { if (subjectOverlay) subjectOverlay.setAttribute('aria-hidden', 'true'); } catch(e){}
         loadData(subject).then(() => {
             switchTab('roadmap');
         });

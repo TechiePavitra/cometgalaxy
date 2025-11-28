@@ -31,7 +31,10 @@
   <div class="math-object obj-3">∫</div>
 
   <header id="header">
-    <div class="logo">CometGalaxy</div>
+    <div class="logo" id="logo">CometGalaxy</div>
+    <button class="back-btn" id="backBtn" title="Back" style="display:none;">
+      <i data-lucide="arrow-left"></i>
+    </button>
     <button class="menu-toggle" id="menuBtn">
       <i data-lucide="menu"></i>
     </button>
@@ -51,7 +54,7 @@
         <h1>Welcome to <br>CometGalaxy</h1>
         <p>Explore the universe of knowledge. Master Mathematics, Physics, and Computer Science in one place.</p>
         <div class="hero-buttons">
-          <a href="#roadmap" class="cta-button primary" onclick="selectSubject('math'); return false;">
+          <a href="#" class="cta-button primary" onclick="openSubjectSelector(); return false;">
             Get Started <i data-lucide="rocket"></i>
           </a>
           <a href="#books" class="cta-button secondary" onclick="switchTab('books'); return false;">
@@ -63,33 +66,7 @@
         </div>
       </div>
 
-      <!-- Subject Selection Cards -->
-      <div class="subjects-section">
-        <h2 style="text-align: center; margin: 60px 0 30px;">Choose Your Subject</h2>
-        <div class="subjects-grid">
-          <div class="subject-card" onclick="selectSubject('math')">
-            <div class="subject-icon">
-              <i data-lucide="square-root"></i>
-            </div>
-            <h3>Mathematics</h3>
-            <p>Master algebraic, calculus, and geometry concepts</p>
-          </div>
-          <div class="subject-card" onclick="selectSubject('physics')">
-            <div class="subject-icon">
-              <i data-lucide="zap"></i>
-            </div>
-            <h3>Physics</h3>
-            <p>Explore mechanics, waves, and energy</p>
-          </div>
-          <div class="subject-card" onclick="selectSubject('cs')">
-            <div class="subject-icon">
-              <i data-lucide="code"></i>
-            </div>
-            <h3>Computer Science</h3>
-            <p>Learn algorithms, data structures, and systems</p>
-          </div>
-        </div>
-      </div>
+      <!-- Inline homepage subject cards removed. Use full-screen selector on Get Started. -->
 
       <div class="features">
         <div class="feature-card">
@@ -161,6 +138,37 @@
       </div>
     </section>
   </main>
+
+  <!-- Fullscreen Subject Selector Overlay -->
+  <div id="subjectOverlay" class="subject-overlay" aria-hidden="true">
+    <div class="subject-overlay-inner">
+      <button class="subject-close" id="subjectClose" aria-label="Close selector">
+        <i data-lucide="x"></i>
+      </button>
+      <h2>Choose Your Subject</h2>
+      <p class="muted">Pick a subject to begin your learning path</p>
+      <div class="subject-options">
+        <button class="subject-option math-card" data-subject="math" onclick="selectSubject('math')">
+          <div class="subject-icon">
+            <span class="subject-unicode">∑</span>
+          </div>
+          <strong>Mathematics</strong>
+        </button>
+        <button class="subject-option physics-card" data-subject="physics" onclick="selectSubject('physics')">
+          <div class="subject-icon">
+            <i data-lucide="zap"></i>
+          </div>
+          <strong>Physics</strong>
+        </button>
+        <button class="subject-option cs-card" data-subject="cs" onclick="selectSubject('cs')">
+          <div class="subject-icon">
+            <i data-lucide="code"></i>
+          </div>
+          <strong>Computer Science</strong>
+        </button>
+      </div>
+    </div>
+  </div>
 
   <!-- Book Modal -->
   <div id="bookModal" class="modal">
